@@ -21,6 +21,7 @@ def usage():
         file_name = sys.argv[1]
         file_content = read_text_file(file_name)
         print(file_content)
+    '''change if management file is changed. Done by Saira'''
 
 def read_text_file(file_name):
     '''opens the file given by the user'''
@@ -30,17 +31,51 @@ def read_text_file(file_name):
         return 'File not found'
 
 def management(file_name):
-    #   '''This function organizes the file based on the user's input'''
-    #   '''Options are: alphabetical, dietary, transportation, program name, elective'''
+    '''This function organizes the file based on the user's input'''
+    '''Options are: alphabetical, dietary, transportation, program name, elective, campus'''
     f = open(file_name, 'r')
-    #categorizes
+    #TO DO: turn user_test into a dictonary/list
+    #    if sys.argv[2] == 'alphabetical':
+    #       alp_order(file_name)
+    '''To do:TRY sys.arguments if that doesn't work, it'll be a user input. Done by Saira'''
 
-#def generate_report(filename):
-#   '''Takes the management report and generates it into a file and moves it to the school folder'''
+def alp_order:
+    ''' Take the file, turn it into a list/dictonary and then order last name by alphabectical order''' 
+    ''' to do: Nishan'''
 
-#def validiation:
-#   '''Validates users options, if the user picks incorrect options then print assignment2.py'''
+def program_name:
+    '''Take the file, user inputs a program name, turn file into a list and dictonary and only pull the lines with the program name'''
+    '''end of the report, count how many lines there were: There is 60 students in the _ program'''
+    '''if name does not exist, enter an error message '''
+    ''' to do: Andrew '''
 
+def elective:
+     '''similar to program name. Done by Andrew'''
+
+def campus:
+    ''' take the file, user input a program name, turn file into dictonary/list and only pull campus names'''
+    ''' Done by Juliana'''
+
+def transportation: 
+   ''' take the file, user inputs transportation name, and pull whatever the name is'''
+   '''Done by Shawmya'''
+
+def dietary:
+   '''take the file, user inputs dietary, pull the diets'''
+   '''Done by Shawmya'''
+
+def find_student:
+   '''take a file, user would input a name and student id and then find the user"'''
+   '''Done by Nishan'''
+
+
+def generate_report(filename)
+   '''Takes the management report and generates it into a file and moves it to the school folder'''
+   '''Done by Saira'''
+
+def validiation(filename, argument):
+   '''Validates users options, if the user picks incorrect options then print assignment2.py'''
+   '''go through the file, check if the name exist, if it does not exist, it will print out an error message'''
 
 if __name__ == '__main__':
     folder_path = 'school_folder' #the path of the folder - should be in the same directory as assignment 2
