@@ -1,0 +1,28 @@
+Campus: York
+ Address: 70 The Pond Rd
+ City: Toronto
+ Country: Canada
+ Postal Code: M3J3M6
+ Province: ON
+
+Campus: Newnham
+ Address: 1750 Finch Ave E
+ City: Toronto
+ Country: Canada
+ Postal Code: M2J2X5
+ Province: ON
+
+Campus: Markham
+ Address: 8 The Seneca Way
+ City: Markham
+ Country: Canada
+ Postal Code: L3R5Y1
+ Province: ON
+
+Campus: King
+ Address: 13990 Dufferin St
+ City: King City
+ Country: Canada
+ Postal Code: L7B1L7
+ Province: ON
+
