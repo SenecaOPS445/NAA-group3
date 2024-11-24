@@ -15,59 +15,74 @@ def school_folder(folder_path):
 
 def usage():
     '''prints messages to users'''
-    if len(sys.argv) != 2:
-        print('File name not given, Please enter a file name')
+    if len(sys.argv) != 3:
+        print('USAGE: ' + sys.argv[0] + ' File_Name' + ' Options') #if the user does not use 3 arguments: filename + options + program name
+        sys.exit() 
     else:
         file_name = sys.argv[1]
-        file_content = read_text_file(file_name)
-        print(file_content)
-    '''change if management file is changed. Done by Saira'''
+        option = sys.argv[2]
+        management(file_name, option) #call the management function
 
 def read_text_file(file_name):
     '''opens the file given by the user'''
-    try:
-        management(file_name) #hmm?
-    except FileNotFoundError:
-        return 'File not found'
+    if os.path.isfile(file_name): #checks if the file is found
+        return 'File found!'
+    else:
+        return 'File not found' #prints the error message if file doesn't exist
 
-def management(file_name):
+def management(file_name, option):
     '''This function organizes the file based on the user's input'''
     '''Options are: alphabetical, dietary, transportation, program name, elective, campus'''
-    f = open(file_name, 'r')
-    #TO DO: turn user_test into a dictonary/list
-    #    if sys.argv[2] == 'alphabetical':
-    #       alp_order(file_name)
-    '''To do:TRY sys.arguments if that doesn't work, it'll be a user input. Done by Saira'''
+    file_content = read_text_file(file_name) #checks if the file exist
+    print(file_content) 
 
-def alp_order:
-    ''' Take the file, turn it into a list/dictonary and then order last name by alphabectical order''' 
-    ''' to do: Nishan'''
+    if option.lower() == 'alphabetical' or option.lower() == 'a':
+        alp_order()
+    elif option.lower() == 'program' or option.lower() == 'p':
+        program_name()
+    elif option.lower() == 'elective' or option.lower():
+        elective()
+    elif option.lower() == 'campus' or option.lower() == 'c':
+        elective()
+    elif option == 'transportation' or option.lower() == 't':
+        transporation()
+    elif option.lower() == 'dietary' or  option.lower() == 'd':
+        dietary()
+    elif option.lower() == 'student' or option.lower() == 's':
+        find_student()
+    else:
+        print('Please enter an option (Alphabetical (a), Program (p), Elective (e)')
+        print('Campus (c), Transportation (t), Dietary (d), Student (s)')
+    print('option name:', sys.argv[2])
 
-def program_name:
-    '''Take the file, user inputs a program name, turn file into a list and dictonary and only pull the lines with the program name'''
-    '''end of the report, count how many lines there were: There is 60 students in the _ program'''
-    '''if name does not exist, enter an error message '''
-    ''' to do: Andrew '''
+def alp_order():
+    '''Take the file, turn it into a list/dictonary and then order last name by alphabectical order '''
+    print('To be done: Nishan')
 
-def elective:
-     '''similar to program name. Done by Andrew'''
+def program_name():
+    '''Take the file, turn it into a list/dictonary, print the program selected'''
+    '''print the error message if program name doesn't exist'''
+    print('To be done: Andrew')
 
-def campus:
-    ''' take the file, user input a program name, turn file into dictonary/list and only pull campus names'''
-    ''' Done by Juliana'''
+def elective():
+    '''returns the elective selected'''
+    print('To be done: Andrew')
 
-def transportation: 
-   ''' take the file, user inputs transportation name, and pull whatever the name is'''
-   '''Done by Shawmya'''
+def campus():
+    '''returns the campus selected'''
+    print('To be done: Juliana')
 
-def dietary:
-   '''take the file, user inputs dietary, pull the diets'''
-   '''Done by Shawmya'''
+def transportation():
+    '''returns the transporation selected'''
+    print('To be done Shawmya')
 
-def find_student:
-   '''take a file, user would input a name and student id and then find the user"'''
-   '''Done by Nishan'''
+def dietary():
+    '''returns the diet selected'''
+    print('To be done by Shawmya')
 
+def find_student():
+    '''user will input name and student_id and find the the user'''
+    print('To be done by Nishan')
 
 def generate_report(filename)
    '''Takes the management report and generates it into a file and moves it to the school folder'''
@@ -81,4 +96,4 @@ if __name__ == '__main__':
     folder_path = 'school_folder' #the path of the folder - should be in the same directory as assignment 2
     print(school_folder(folder_path))
     usage()
-
+    
