@@ -28,7 +28,9 @@ def read_text_file(file_name):
     if os.path.isfile(file_name): #checks if the file is found
         return 'File found!'
     else:
-        return 'File not found' #prints the error message if file doesn't exist
+        print('File not found')
+        sys.exit()
+#        return 'File not found' #prints the error message if file doesn't exist
 
 def management(file_name, option):
     '''This function organizes the file based on the user's input'''
@@ -36,19 +38,19 @@ def management(file_name, option):
     file_content = read_text_file(file_name) #checks if the file exist
     print(file_content) 
 
-    if option.lower() == 'alphabetical' or option.lower() == 'a':
+    if option.lower() == 'a' or option.lower() == 'alphabetical':
         alp_order()
-    elif option.lower() == 'program' or option.lower() == 'p':
+    elif option.lower() == 'p' or option.lower() == 'program':
         program_name()
-    elif option.lower() == 'elective' or option.lower():
+    elif option.lower() == 'e' or option.lower() == 'elective':
         elective()
-    elif option.lower() == 'campus' or option.lower() == 'c':
-        elective()
-    elif option == 'transportation' or option.lower() == 't':
-        transporation()
-    elif option.lower() == 'dietary' or  option.lower() == 'd':
+    elif option.lower() == 'c' or option.lower() == 'campus':
+        campus()
+    elif option.lower() == 't' or option.lower() == 'transportation':
+        transportation()
+    elif option.lower() == 'd' or option.lower() == 'dietary':
         dietary()
-    elif option.lower() == 'student' or option.lower() == 's':
+    elif option.lower() == 's' or option.lower() == 'student':
         find_student()
     else:
         print('Please enter an option (Alphabetical (a), Program (p), Elective (e)')
@@ -57,34 +59,34 @@ def management(file_name, option):
 
 def alp_order():
     '''Take the file, turn it into a list/dictonary and then order last name by alphabectical order '''
-    print('To be done: Nishan')
+    print('ALPHABETICAL: To be done: Nishan')
 
 def program_name():
     '''Take the file, turn it into a list/dictonary, print the program selected'''
     '''print the error message if program name doesn't exist'''
-    print('To be done: Andrew')
+    print('PROGRAM: To be done: Andrew')
 
 def elective():
     '''returns the elective selected'''
-    print('To be done: Andrew')
+    print('ELECTIVE:To be done: Andrew')
 
 def campus():
     '''returns the campus selected'''
-    print('To be done: Juliana')
+    print('CAMPUS: To be done: Juliana')
 
 def transportation():
     '''returns the transporation selected'''
-    print('To be done Shawmya')
+    print('TRANSPORTATION: To be done Shawmya')
 
 def dietary():
     '''returns the diet selected'''
-    print('To be done by Shawmya')
+    print('DIETARY: To be done by Shawmya')
 
 def find_student():
     '''user will input name and student_id and find the the user'''
-    print('To be done by Nishan')
+    print('STUDENT: To be done by Nishan')
 
-def generate_report(filename)
+def generate_report(filename):
    '''Takes the management report and generates it into a file and moves it to the school folder'''
    '''Done by Saira'''
 
