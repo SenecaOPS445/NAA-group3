@@ -42,8 +42,57 @@ def program_name(file_name):
     except Exception as e:
         print(f"An error occurred: {e}")
 
+def elective(file_name):
 
-    
+    try:
+        #Open and read the file with student and elective data
+        file = open(file_name, 'r')
+        enrolled_electives = []
+
+        for line in file:
+            student_electives = line.strip().split(',')
+            if len(student_electives) == 2:
+                student_name, elective_name = student_electives
+                enrolled_electives.append((student_name.strip(), elective_name.strip()))
+
+            else:
+                print(f"Invalid line: {line.strip()}")
+        
+        #Close file after reading it
+        file.close()
+
+        #Ask the user to search the elective they are looking for
+        searched_elective = input("Enter the name of the elective you are looking for: ").strip()
+
+        #Find all students found in searched elective
+        enrolled_in_elective = [student for student, elective in enrolled_electives if elective.lower() == searched_elective.lower()]
+
+        #results of elective search
+        if enrolled_in_elective:
+            print(f"Students enrolled in {searched_elective}:")
+            for student in enrolled_in_elective:
+                print(student)
+        else:
+            print(f"There are no students found in the elective: {searched_elective}")
+
+
+        #Return the elective and the students enrolled in it
+        return searched_elective, enrolled_in_elective
+
+    except FileNotFoundError:
+        print(f"Error: The file '{file_name}' does not exist.")
+        return None, []
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None, []
+
+
+
+
+
+
+
 #Testing the function
 
 def main():
@@ -51,10 +100,9 @@ def main():
     file_name = 'studentprograms.txt'
     program_name(file_name)
 
+    file_name = 'electives.txt'
+    elective(file_name)
+
 if __name__ == "__main__":
     main()
 
-
-
-    
-                
