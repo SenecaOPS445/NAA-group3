@@ -49,7 +49,7 @@ def program_name(file_name):
 
     except Exception as e:
         print(f"An error occurred: {e}") # any other errors
-        return None, []
+        return None, 
 
 def elective(file_name):
 
