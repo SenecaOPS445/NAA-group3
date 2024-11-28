@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Project Name: Assignment 2
 # Group 3
-# Student Name: Shawmya Sivakumar
+# Student Name: Saira Munawar, Andrew, Juliana, Nishan Shawmya Sivakumar
 
 import sys, os
 
