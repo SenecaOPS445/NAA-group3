@@ -5,8 +5,7 @@
 # Group3
 # Student Name: Nishan Gharti
 
-import sys
-import os
+import sys, os
 
 def alp_order(file_name):
   try:
