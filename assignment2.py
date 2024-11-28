@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #Project Name: Assignment 2
 #Group 3
-#Student Names: Saira Munawar
+#Student Names: Saira Munawar, Nishan, Juliana
 
 import sys, os, datetime, shutil
 
@@ -55,12 +55,25 @@ def management(file_name, option):
     else:
         print('Please enter an option (Alphabetical (a), Program (p), Elective (e)')
         print('Campus (c), Transportation (t), Dietary (d), Student (s)')
-
+        
 def alp_order(file_name):
-
-def program_name(file_name):
-
-def elective(file_name):
+  try:
+    f = open(file_name, 'r') # Opens the file in read mode
+    lines = f.readlines() # Read all the lines from the file
+    students = [] # Creating a list to store student data
+    for line in lines:
+      name_split = line.strip().split(',') # Split the line by commas
+      if len(name_split) > 1: 
+        full_name = name_split[0].strip() # Extracting the full name
+        first_name, last_name = full_name.split()[:2] # Splits it into first and last name
+        name_format = f"{last_name} {first_name.strip()}" # To change the name format as lastname firstname
+        students.append((last_name, name_format)) # Append it to the list student
+    students.sort() # Sorts the name by lastname of the students in alphabetical order
+    for student in students:
+      print(student[1].strip()) # prints the name 
+          
+  except FileNotFoundError: # To chevck if the file exists or not and handle the error.
+      print(f"Error: The file '{file_name}' does not exits")
 
 def campus(file_name):
   try:
@@ -83,39 +96,24 @@ def campus(file_name):
 
     except:
             return campus_details  # Return the summary as a dictionary
-   
-def transportation(file_name):
-
-def dietary(file_name):
-
+      
 def find_student(file_name):
-    '''user will input name and student_id and find the the user'''
-    
-def generate_report(option, information):
-   '''Takes the management report and generates it into a file and moves it to the school folder'''
-   current_date = datetime.datetime.now()
-   formatted_date = current_date.strftime('%d-%m-%Y-%H-%M-%d')
-   filename = "Report_" + option + "_" + formatted_date + ".txt"
-   print('file generated will be named: ' + filename)
-   f = open(filename, "a")
-   f.write(option + " Report\n")
-   f.write("=" * 80 + "\n")
-   if information:
-       for info in information:
-           f.write(info + "\n")
-   else:
-       f.write("No " + option + " found matching your query.\n")
-   f.close()
-   print('Report was generated: ' + filename)
-   
-   #moving the file to school folder:
-   source = filename
-   destination = 'school_folder'
-   dest = shutil.move(source, destination) 
-   print('File moved to school_folder!')
-   
-if __name__ == '__main__':
-    folder_path = 'school_folder' #the path of the folder - should be in the same directory as assignment 2
-    print(school_folder(folder_path))
-    usage()
+  try:
+      f = open(file_name, 'r') # Open the file in read mode
+      lines = f.readlines() # read all the lines from the provided file.
 
+      student_info = input('Enter the student name or ID: ').strip().lower() # Prompts the user for input to search for specific student.
+      for line in lines:
+       if student_info in line.lower(): # To check if the input info matches any part of the line or not.
+        print( line.strip()) # Prints out the match info.
+  except FileNotFoundError: # To check if the file exists or not and handle error.
+       print(f"Error: The file '{file_name}' does not exits")
+      
+def program_name(file_name):
+
+def elective(file_name):
+
+def campus(file_name):
+  try:
+        with open("user_test", "r") as file:
+            data = file.readlines()  # Read all lines from the file
