@@ -19,9 +19,10 @@ def alp_order(file_name):
         first_name, last_name = full_name.split()[:2] # Splits it into first and last name
         name_format = f"{last_name} {first_name.strip()}" # To change the name format as lastname firstname
         students.append((last_name, name_format)) # Append it to the list student
-        students.sort() # Sorts the name by lastname of the students in alphabetical order
-        for student in students:
-          print( student[1].strip()) # prints the name 
+    students.sort() # Sorts the name by lastname of the students in alphabetical order
+    for student in students:
+      print(student[1].strip()) # prints the name 
+          
   except FileNotFoundError: # To chevck if the file exists or not and handle the error.
       print(f"Error: The file '{file_name}' does not exits")
 
@@ -37,3 +38,17 @@ def find_student(file_name):
         print( line.strip()) # Prints out the match info.
   except FileNotFoundError: # To check if the file exists or not and handle error.
        print(f"Error: The file '{file_name}' does not exits")
+
+#for testing
+if __name__ == "__main__":
+  file_name = sys.argv[1]
+  option = sys.argv[2]
+  
+
+
+  if option == 'a':
+    alp_order(file_name)
+  if option == 's':
+    find_student(file_name)
+
+  
