@@ -110,7 +110,7 @@ def elective(file_name):
 
 def main():
     # Directly specifying the file name for testing
-    file_name = 'user_test.txt'
+    file_name = 'test.txt'
     program_name(file_name)
     elective(file_name)
 
