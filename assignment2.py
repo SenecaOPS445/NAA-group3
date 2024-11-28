@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-<<<<<<< HEAD
 #Project Name: Assignment 2
 #Group 3
-#Student Names: Saira Munawar, Nishan, Juliana
+#Student Names: Saira Munawar, Andrew, Nishan, Juliana
 
 import sys, os, datetime, shutil
 
@@ -109,20 +108,6 @@ def find_student(file_name):
         print( line.strip()) # Prints out the match info.
   except FileNotFoundError: # To check if the file exists or not and handle error.
        print(f"Error: The file '{file_name}' does not exits")
-      
-def program_name(file_name):
-
-def elective(file_name):
-
-def campus(file_name):
-  try:
-        with open("user_test", "r") as file:
-            data = file.readlines()  # Read all lines from the file
-=======
-#Project Name: Assignment2
-#Group 3
-
-import sys, os
 
 def program_name(file_name):
 
@@ -221,20 +206,7 @@ def elective(file_name):
         return None, []
 
 
-
-
-
-
-
-#Testing the function
-
-def main():
-    # Directly specifying the file name for testing
-    file_name = 'test.txt'
-    program_name(file_name)
-    elective(file_name)
-
 if __name__ == "__main__":
-    main()
-
->>>>>>> 8e93a0ed22b0b8a191044e3f840d35b11d52c52f
+    folder_path = 'school_folder'
+    print(school_folder(folder_path)
+    usage()
