@@ -3,7 +3,7 @@
 #Group 3
 #Student Names: Saira Munawar
 
-import sys, os
+import sys, os, datetime, shutil
 
 def school_folder(folder_path):
     '''Creates the school folder if it does not exit.'''
@@ -37,63 +37,63 @@ def management(file_name, option):
     '''Options are: alphabetical, dietary, transportation, program name, elective, campus'''
     file_content = read_text_file(file_name) #checks if the file exist
     print(file_content) 
-
+    print('option: ', sys.argv[2])
     if option.lower() == 'a' or option.lower() == 'alphabetical':
-        alp_order()
+        alp_order(file_name)
     elif option.lower() == 'p' or option.lower() == 'program':
-        program_name()
+        program_name(file_name)
     elif option.lower() == 'e' or option.lower() == 'elective':
-        elective()
+        elective(file_name)
     elif option.lower() == 'c' or option.lower() == 'campus':
-        campus()
+        campus(file_name)
     elif option.lower() == 't' or option.lower() == 'transportation':
-        transportation()
+        transportation(file_name)
     elif option.lower() == 'd' or option.lower() == 'dietary':
-        dietary()
+        dietary(file_name)
     elif option.lower() == 's' or option.lower() == 'student':
-        find_student()
+        find_student(file_name)
     else:
         print('Please enter an option (Alphabetical (a), Program (p), Elective (e)')
         print('Campus (c), Transportation (t), Dietary (d), Student (s)')
-    print('option name:', sys.argv[2])
 
-def alp_order():
-    '''Take the file, turn it into a list/dictonary and then order last name by alphabectical order '''
-    print('ALPHABETICAL: To be done: Nishan')
+def alp_order(file_name):
 
-def program_name():
-    '''Take the file, turn it into a list/dictonary, print the program selected'''
-    '''print the error message if program name doesn't exist'''
-    print('PROGRAM: To be done: Andrew')
+def program_name(file_name):
 
-def elective():
-    '''returns the elective selected'''
-    print('ELECTIVE:To be done: Andrew')
+def elective(file_name):
 
-def campus():
-    '''returns the campus selected'''
-    print('CAMPUS: To be done: Juliana')
+def campus(file_name):
+   
+def transportation(file_name):
 
-def transportation():
-    '''returns the transporation selected'''
-    print('TRANSPORTATION: To be done Shawmya')
+def dietary(file_name):
 
-def dietary():
-    '''returns the diet selected'''
-    print('DIETARY: To be done by Shawmya')
-
-def find_student():
+def find_student(file_name):
     '''user will input name and student_id and find the the user'''
-    print('STUDENT: To be done by Nishan')
-
-def generate_report(filename):
+    
+def generate_report(option, information):
    '''Takes the management report and generates it into a file and moves it to the school folder'''
-   '''Done by Saira'''
-
-def validiation(filename, argument):
-   '''Validates users options, if the user picks incorrect options then print assignment2.py'''
-   '''go through the file, check if the name exist, if it does not exist, it will print out an error message'''
-
+   current_date = datetime.datetime.now()
+   formatted_date = current_date.strftime('%d-%m-%Y-%H-%M-%d')
+   filename = "Report_" + option + "_" + formatted_date + ".txt"
+   print('file generated will be named: ' + filename)
+   f = open(filename, "a")
+   f.write(option + " Report\n")
+   f.write("=" * 80 + "\n")
+   if information:
+       for info in information:
+           f.write(info + "\n")
+   else:
+       f.write("No " + option + " found matching your query.\n")
+   f.close()
+   print('Report was generated: ' + filename)
+   
+   #moving the file to school folder:
+   source = filename
+   destination = 'school_folder'
+   dest = shutil.move(source, destination) 
+   print('File moved to school_folder!')
+   
 if __name__ == '__main__':
     folder_path = 'school_folder' #the path of the folder - should be in the same directory as assignment 2
     print(school_folder(folder_path))
