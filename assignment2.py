@@ -39,16 +39,6 @@ def find_student(file_name):
   except FileNotFoundError: # To check if the file exists or not and handle error.
        print(f"Error: The file '{file_name}' does not exits")
 
-#for testing
-if __name__ == "__main__":
-  file_name = sys.argv[1]
-  option = sys.argv[2]
-  
 
-
-  if option == 'a':
-    alp_order(file_name)
-  if option == 's':
-    find_student(file_name)
 
   
