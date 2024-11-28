@@ -63,6 +63,26 @@ def program_name(file_name):
 def elective(file_name):
 
 def campus(file_name):
+  try:
+        with open("user_test", "r") as file:
+            data = file.readlines()  # Read all lines from the file
+
+        # Initialize an empty dictionary to store campus counts
+        campus_details = {}
+
+        # Process each line in the file
+        for line in data:
+            campus_comp = [comp.strip(" '") for comp in line.strip().split(",")]
+            if len(campus) < 8:  # Ensure there are enough fields
+                continue  # Skip invalid lines with insufficient data
+
+            campus = campus_comp[2]
+
+            # Count occurrences of each transportation mode
+            campus_details[campus] = campus_details.get(campus, 0) + 1
+
+    except:
+            return campus_details  # Return the summary as a dictionary
    
 def transportation(file_name):
 
@@ -98,4 +118,4 @@ if __name__ == '__main__':
     folder_path = 'school_folder' #the path of the folder - should be in the same directory as assignment 2
     print(school_folder(folder_path))
     usage()
-    
+
