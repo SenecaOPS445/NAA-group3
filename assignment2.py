@@ -50,12 +50,12 @@ campuses = {
 
 
 def main():
-if __name__ == "__main__":
+    if __name__ == "__main__":
     # Output file name
-    file_name = 'campuses.txt'
-    campus(file_name, campuses)
+        file_name = 'campuses.txt'
+        campus(file_name, campuses)
 
     # Asking user for a search and using the search variable to go through the file and search
-    search_name = input("Enter the campus name you want to search for: ")
-    search_campus(file_name, search_name)
+        search_name = input("Enter the campus name you want to search for: ")
+        search_campus(file_name, search_name)
 
