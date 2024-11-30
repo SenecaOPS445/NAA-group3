@@ -192,7 +192,7 @@ def elective(file_name):
 def campus(file_name): 
 	'''User will enter a campus and the program will display the campus and the users'''
 	option = 'Campus'
-	filename = 'c:/users/me/documents/campus.txt"'
+	filename = 'campus.txt"'
 	
 	#ask user to search for file
 	campus_search = input('Enter the Campus: (York, Markham, Newnham, King): ').strip().lower()
