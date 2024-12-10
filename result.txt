@@ -1,0 +1,25 @@
+
+--------------------------------------------------
+group3
+--------------------------------------------------
+Python Version: 3.12.7 (main, Oct  1 2024, 11:15:50) [GCC 14.2.1 20240910]
+Ran on 2024-12-02 12:50:57.602284
+Git commit used: commit c08f85526916a2aa6ebdab67f5d096e9669b4985
+Merge: ea561d2 0d0c019
+Author: smunawar4 <sairamunawar4@gmail.com>
+Date:   Fri Nov 29 20:55:53 2024 -0500
+
+    Merge pull request #13 from SenecaOPS445/Assignment2-Branch1
+    
+    Final - Edited
+
+
+--------------------------------------------------
+Relevant, useful, shows ambition           3.0/  3
+Comments and Documentation                 5.0/  5
+Adequate commits with good messages        5.0/  5
+No redundant code, variable names          2.0/  2
+
+--------------------------------------------------
+Total: 15.0/15
+FEEDBACK:
